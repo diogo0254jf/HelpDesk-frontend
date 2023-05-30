@@ -16,17 +16,17 @@ table {
 }
 
 .filtro {
+  margin-top: 1rem;
   width: 80%;
 }
 
 .campoOptions {
   display: flex;
   justify-content: space-around;
-  margin: 1rem 1rem;
 }
 
 .btnNovo {
-  margin: 1rem 0;
+  margin: auto 0;
   background-color: #00FF00;
   color: #ffffff;
   font-size: bold;
