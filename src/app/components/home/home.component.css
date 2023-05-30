@@ -1,5 +1,6 @@
 .card {
   width: 90%;
+  padding: auto;
   margin: auto;
   background-color: rgb(234, 235, 235);
 }

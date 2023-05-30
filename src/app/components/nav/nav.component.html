@@ -1,7 +1,12 @@
 <mat-drawer-container class="container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <mat-nav-list class="nav-list">
-      <img class="imagemMenu" routerLink="home" src="assets/img/side-image.svg" alt="Imagem de navegação" />
+      <img
+        class="imagemMenu"
+        routerLink="home"
+        src="assets/img/side-image.svg"
+        alt="Imagem de navegação"
+      />
       <a mat-list-item routerLink="home">
         <i class="material-icons">home</i>
         Home
@@ -17,12 +22,16 @@
         Clientes
       </a>
 
-      <a mat-list-item href="https://github.com/diogo0254jf/Help-Desk" target="_blank">
+      <a
+        mat-list-item
+        href="https://github.com/diogo0254jf/Help-Desk"
+        target="_blank"
+      >
         <i class="material-icons">code</i>
         Github
       </a>
 
-      <a mat-list-item (click)='logout()'>
+      <a mat-list-item (click)="logout()">
         <i class="material-icons">logout</i>
         Logout
       </a>
