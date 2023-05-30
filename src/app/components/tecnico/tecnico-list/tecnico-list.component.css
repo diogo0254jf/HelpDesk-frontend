@@ -42,3 +42,11 @@ table {
   text-shadow: none;
   transition: .1s;
 }
+
+.edit {
+  color: rgb(12, 143, 170);
+}
+
+.delete {
+  color: rgb(170, 12, 12);
+}
