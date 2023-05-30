@@ -33,10 +33,11 @@ import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from "./components/nav/nav.component";
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { authInterceptorProviders } from "./interceptor/auth.interceptor";
+import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, HeaderComponent, TecnicoListComponent, LoginComponent],
+  declarations: [AppComponent, NavComponent, HomeComponent, HeaderComponent, TecnicoListComponent, LoginComponent, TecnicoCreateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
