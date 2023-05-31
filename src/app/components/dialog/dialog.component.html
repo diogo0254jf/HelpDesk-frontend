@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>{{ data.description }}</div>
+<div mat-dialog-actions class="mat-dialog-actions">
+  <button mat-button mat-elevation-z4 class="Accept" (click)="onButtonClick(true)">
+    {{ data.btnText }}
+  </button>
+  <button
+    mat-button
+    mat-elevation-z4
+    class="Decline"
+    (click)="onButtonClick(false)"
+  >
+    {{ data.btnCancel }}
+  </button>
+</div>

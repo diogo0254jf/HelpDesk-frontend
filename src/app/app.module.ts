@@ -37,9 +37,11 @@ import { authInterceptorProviders } from "./interceptor/auth.interceptor";
 import { NgxMaskModule } from 'ngx-mask';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, HeaderComponent, TecnicoListComponent, LoginComponent, TecnicoCreateComponent, TecnicoUpdateComponent, TecnicoDeleteComponent],
+  declarations: [AppComponent, NavComponent, HomeComponent, HeaderComponent, TecnicoListComponent, LoginComponent, TecnicoCreateComponent, TecnicoUpdateComponent, TecnicoDeleteComponent, DialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -72,7 +74,7 @@ import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecn
       closeButton: true,
       
     }),
-
+    MatDialogModule,
     
     
   ],
