@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
@@ -23,11 +22,6 @@ export class TecnicoDeleteComponent implements OnInit {
     dataCriacao: "",
   };
 
-  nome: FormControl = new FormControl(null, Validators.minLength(3));
-  cpf: FormControl = new FormControl(null, Validators.required);
-  email: FormControl = new FormControl(null, Validators.email);
-  senha: FormControl = new FormControl(null, Validators.minLength(3));
-
   constructor(
     private service: TecnicoService,
     private toast: ToastrService,
@@ -38,6 +32,14 @@ export class TecnicoDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.tecnico.id = this.route.snapshot.paramMap.get("id")!;
+    this.findById(this.tecnico.id);
+  }
+
+  findById(id: any): void {
+    this.service.findById(id).subscribe((res) => {
+      res.perfis = [];
+      this.tecnico = res;
+    });
   }
 
   delete(): void {
@@ -60,7 +62,7 @@ export class TecnicoDeleteComponent implements OnInit {
         data: {
           title: "Deseja realmente excluir o técnico?",
           description:
-            "Caso o técnico seja excluído, não será possível recuperá-lo.",
+            "Depois de excluído, não será possível recuperar.",
           btnText: "Excluir",
           btnCancel: "Cancelar",
         },
