@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from "ngx-toastr";
 import { Tecnico } from "src/app/models/tecnico";
 import { TecnicoService } from "src/app/services/tecnico.service";
@@ -29,7 +29,8 @@ export class TecnicoUpdateComponent implements OnInit {
   constructor(
     private service: TecnicoService,
     private toast: ToastrService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,15 +38,22 @@ export class TecnicoUpdateComponent implements OnInit {
     this.findById(this.tecnico.id);
   }
 
+  findById(id: any): void {
+    this.service.findById(id).subscribe((res) => {
+      res.perfis = [];
+      this.tecnico = res;
+      
+    });
+  }
+
   update(): void {
-    console.log(this.tecnico);
     this.service.update(this.tecnico).subscribe(
       () => {
         this.toast.success("Técnico atualizado com sucesso!", "Sucesso!");
+        this.router.navigate(['tecnicos'])
       },
       (ex) => {
         this.toast.error(ex.error.message, ex.error.error);
-        console.log(ex.error);
       }
     );
   }
@@ -64,9 +72,5 @@ export class TecnicoUpdateComponent implements OnInit {
     );
   }
 
-  findById(id: any): void {
-    this.service.findById(id).subscribe((res) => {
-      this.tecnico = res;
-    });
-  }
+  
 }
