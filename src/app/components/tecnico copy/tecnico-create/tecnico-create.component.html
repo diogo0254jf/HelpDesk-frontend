@@ -1,0 +1,105 @@
+<div class="container mat-elevation-z8">
+  <form class="form">
+    <h1>Cadastrar Técnico</h1>
+    <img
+      class="fullWidth"
+      src="../../../../assets/img/tecnico-create.svg"
+      alt="Criar Técnico"
+    />
+    <section class="section">
+      <mat-checkbox class="checkbox" (click)="addPerfil(0)" color="primary"
+        >Admin</mat-checkbox
+      >
+      <mat-checkbox
+        class="checkbox"
+        [checked]="true"
+        (click)="addPerfil(1)"
+        color="primary"
+        >Cliente</mat-checkbox
+      >
+      <mat-checkbox class="checkbox" (click)="addPerfil(2)" color="primary"
+        >Técnico</mat-checkbox
+      >
+    </section>
+
+    <div class="inputForm fullWidth">
+      <mat-form-field appearance="fill">
+        <mat-label>Digite seu nome</mat-label>
+        <input
+          matInput
+          [(ngModel)]="tecnico.nome"
+          [formControl]="nome"
+          maxlength="50"
+          required
+          placeholder="ex: João"
+        />
+        <mat-icon matSuffix>account_box</mat-icon>
+        <mat-hint>Nome</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Digite seu CPF</mat-label>
+        <input
+          matInput
+          [(ngModel)]="tecnico.cpf"
+          [formControl]="cpf"
+          required
+          placeholder="ex: 111.222.333-44"
+          mask="000.000.000-00"
+        />
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+        <mat-hint>CPF</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Digite seu E-mail</mat-label>
+        <input
+          matInput
+          [(ngModel)]="tecnico.email"
+          [formControl]="email"
+          required
+          type="email"
+          placeholder="ex: mail@mail.com"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint>E-mail</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Digite sua senha</mat-label>
+        <input
+          matInput
+          [(ngModel)]="tecnico.senha"
+          [formControl]="senha"
+          required
+          type="password"
+          placeholder="ex: 123"
+        />
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-hint>Senha</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="buttonsForm">
+      <button
+        [disabled]="!validaCampos()"
+        mat-flat-button
+        class="mat-elevation-z4"
+        color="primary"
+        (click)="create()"
+      >
+        Cadastrar
+      </button>
+      <button
+        mat-stroked-button
+        class="mat-elevation-z4"
+        routerLink="../"
+        color="warn"
+      >
+        Cancelar
+      </button>
+    </div>
+
+    <p class="copwright">© 2023 Diogo Costa. Todos os direitos reservados.</p>
+  </form>
+</div>

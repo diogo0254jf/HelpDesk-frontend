@@ -1,0 +1,92 @@
+<div class="container mat-elevation-z8">
+  <form class="form">
+    <img
+      class="fullWidth"
+      src="../../../../assets/img/tecnico-create.svg"
+      alt="Criar Técnico"
+    />
+    <section class="section">
+      <mat-checkbox class="checkbox" [disabled]="true" color="primary"
+        >Admin</mat-checkbox
+      >
+      <mat-checkbox class="checkbox" [disabled]="true" color="primary"
+        >Cliente</mat-checkbox
+      >
+      <mat-checkbox class="checkbox" [disabled]="true" color="primary"
+        >Técnico</mat-checkbox
+      >
+    </section>
+
+    <div class="inputForm fullWidth">
+      <mat-form-field appearance="fill">
+        <mat-label>Digite seu nome</mat-label>
+        <input
+          [(ngModel)]="tecnico.nome"
+          name="nome"
+          [disabled]="true"
+          matInput
+        />
+        <mat-icon matSuffix>account_box</mat-icon>
+        <mat-hint>Nome</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Digite seu CPF</mat-label>
+        <input
+          matInput
+          name="cpf"
+          [(ngModel)]="tecnico.cpf"
+          [disabled]="true"
+        />
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+        <mat-hint>CPF</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Digite seu E-mail</mat-label>
+        <input
+          matInput
+          name="email"
+          [(ngModel)]="tecnico.email"
+          [disabled]="true"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint>E-mail</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Digite sua senha</mat-label>
+        <input
+          matInput
+          name="senha"
+          [(ngModel)]="tecnico.senha"
+          type="password"
+          [disabled]="true"
+        />
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-hint>Senha</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="buttonsForm">
+      <button
+        mat-flat-button
+        class="mat-elevation-z4"
+        color="primary"
+        (click)="openDialog()"
+      >
+        Deletar
+      </button>
+      <button
+        mat-stroked-button
+        class="mat-elevation-z4"
+        routerLink="../../"
+        color="warn"
+      >
+        Cancelar
+      </button>
+    </div>
+
+    <p class="copwright">© 2023 Diogo Costa. Todos os direitos reservados.</p>
+  </form>
+</div>
