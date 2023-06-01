@@ -1,9 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
+
 .mat-dialog-actions {
   gap: 1rem;
 }
@@ -12,11 +12,23 @@
   background-color: #cf1919;
   color: white;
 }
+
 .Decline {
   background-color: #404040;
   color: white;
 }
 
 img {
-  width: 50%;
+  width: 30%;
+}
+
+.mat-dialog-title {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 1rem auto;
+}
+
+.mat-dialog-content {
+  font-weight: 400;
+  margin: 1rem auto;
 }

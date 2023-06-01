@@ -45,7 +45,7 @@ export class TecnicoDeleteComponent implements OnInit {
   delete(): void {
     this.service.delete(this.tecnico.id).subscribe(
       () => {
-        this.toast.success("Técnico atualizado com sucesso!", "Sucesso!");
+        this.toast.success("Técnico excluido com sucesso!", "Sucesso!");
         this.router.navigate(["tecnicos"]);
       },
       (ex) => {
@@ -58,7 +58,7 @@ export class TecnicoDeleteComponent implements OnInit {
     const dialogRef: MatDialogRef<DialogComponent> = this.dialog.open(
       DialogComponent,
       {
-        width: "450px",
+        width: "500px",
         data: {
           title: "Deseja realmente excluir o técnico?",
           description:

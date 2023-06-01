@@ -43,7 +43,10 @@ export class TecnicoCreateComponent implements OnInit {
         this.router.navigate(["tecnicos"]);
       },
       (ex) => {
-        this.toast.error(ex.error.message, ex.error.error);
+        ex.error.errors.forEach((element: any) => {
+          console.log(element.message, "Erro!");
+          this.toast.error(element.message, ex.error.message);
+        });
       }
     );
   }
