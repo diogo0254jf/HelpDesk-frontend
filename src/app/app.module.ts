@@ -45,6 +45,9 @@ import { TecnicoDeleteComponent } from "./components/tecnico/tecnico-delete/tecn
 import { TecnicoListComponent } from "./components/tecnico/tecnico-list/tecnico-list.component";
 import { TecnicoUpdateComponent } from "./components/tecnico/tecnico-update/tecnico-update.component";
 import { authInterceptorProviders } from "./interceptor/auth.interceptor";
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,9 @@ import { authInterceptorProviders } from "./interceptor/auth.interceptor";
 
     LoginComponent,
     DialogComponent,
+    ChamadoListComponent,
+    ChamadoCreateComponent,
+    ChamadoUpdateComponent,
   ],
 
   imports: [
