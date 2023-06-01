@@ -1,15 +1,15 @@
 <div class="container mat-elevation-z8">
     <form class="form">
-      <h1>Atualizar Técnico</h1>
+      <h1>Atualizar Cliente</h1>
       <img
         class="fullWidth"
         src="../../../../assets/img/tecnico-create.svg"
-        alt="Criar Técnico"
+        alt="Criar Cliente"
       />
       <section class="section">
         <mat-checkbox class="checkbox" (click)="addPerfil(0)" color="primary">Admin</mat-checkbox>
         <mat-checkbox class="checkbox" [checked]="true" (click)="addPerfil(1)" color="primary">Cliente</mat-checkbox>
-        <mat-checkbox class="checkbox" (click)="addPerfil(2)" color="primary">Técnico</mat-checkbox>
+        <mat-checkbox class="checkbox" (click)="addPerfil(2)" color="primary">Cliente</mat-checkbox>
       </section>
   
       <div class="inputForm fullWidth">
@@ -17,7 +17,7 @@
           <mat-label>Digite seu nome</mat-label>
           <input
             matInput
-            [(ngModel)]="tecnico.nome"
+            [(ngModel)]="cliente.nome"
             [formControl]="nome"
             maxlength="50"
             required
@@ -31,7 +31,7 @@
           <mat-label>Digite seu CPF</mat-label>
           <input
             matInput
-            [(ngModel)]="tecnico.cpf"
+            [(ngModel)]="cliente.cpf"
             [formControl]="cpf"
             required
             placeholder="ex: 111.222.333-44"
@@ -45,7 +45,7 @@
           <mat-label>Digite seu E-mail</mat-label>
           <input
             matInput
-            [(ngModel)]="tecnico.email"
+            [(ngModel)]="cliente.email"
             [formControl]="email"
             required
             type="email"
@@ -59,7 +59,7 @@
           <mat-label>Digite sua senha</mat-label>
           <input
             matInput
-            [(ngModel)]="tecnico.senha"
+            [(ngModel)]="cliente.senha"
             [formControl]="senha"
             required
             type="password"

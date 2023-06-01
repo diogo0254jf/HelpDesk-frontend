@@ -15,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatDialogModule } from "@angular/material/dialog";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
@@ -26,22 +27,47 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { NgxMaskModule } from "ngx-mask";
 import { ToastrModule } from "ngx-toastr";
+
+import { ClienteCreateComponent } from "./components/cliente/cliente-create/cliente-create.component";
+import { ClienteDeleteComponent } from "./components/cliente/cliente-delete/cliente-delete.component";
+import { ClienteListComponent } from "./components/cliente/cliente-list/cliente-list.component";
+import { ClienteUpdateComponent } from "./components/cliente/cliente-update/cliente-update.component";
+
+import { DialogComponent } from "./components/dialog/dialog.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { HomeComponent } from "./components/home/home.component";
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from "./components/login/login.component";
 import { NavComponent } from "./components/nav/nav.component";
-import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
-import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { TecnicoCreateComponent } from "./components/tecnico/tecnico-create/tecnico-create.component";
+import { TecnicoDeleteComponent } from "./components/tecnico/tecnico-delete/tecnico-delete.component";
+import { TecnicoListComponent } from "./components/tecnico/tecnico-list/tecnico-list.component";
+import { TecnicoUpdateComponent } from "./components/tecnico/tecnico-update/tecnico-update.component";
 import { authInterceptorProviders } from "./interceptor/auth.interceptor";
-import { NgxMaskModule } from 'ngx-mask';
-import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
-import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, HeaderComponent, TecnicoListComponent, LoginComponent, TecnicoCreateComponent, TecnicoUpdateComponent, TecnicoDeleteComponent, DialogComponent],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    HeaderComponent,
+    
+    ClienteListComponent,
+    ClienteCreateComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent,
+
+
+    TecnicoListComponent,
+    TecnicoCreateComponent,
+    TecnicoUpdateComponent,
+    TecnicoDeleteComponent,
+
+    LoginComponent,
+    DialogComponent,
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -72,11 +98,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
       preventDuplicates: true,
       progressBar: true,
       closeButton: true,
-      
     }),
     MatDialogModule,
-    
-    
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

@@ -2,16 +2,16 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { Tecnico } from "src/app/models/tecnico";
-import { TecnicoService } from "src/app/services/tecnico.service";
+import { Cliente } from "src/app/models/cliente";
+import { Clienteservice } from "src/app/services/cliente.service";
 
 @Component({
-  selector: "app-tecnico-create",
-  templateUrl: "./tecnico-create.component.html",
-  styleUrls: ["./tecnico-create.component.css"],
+  selector: "app-cliente-create",
+  templateUrl: "./cliente-create.component.html",
+  styleUrls: ["./cliente-create.component.css"],
 })
-export class TecnicoCreateComponent implements OnInit {
-  tecnico: Tecnico = {
+export class ClienteCreateComponent implements OnInit {
+  cliente: Cliente = {
     id: "",
     nome: "",
     cpf: "",
@@ -29,7 +29,7 @@ export class TecnicoCreateComponent implements OnInit {
   senha: FormControl = new FormControl(null, [Validators.minLength(3)]);
 
   constructor(
-    private service: TecnicoService,
+    private service: Clienteservice,
     private toast: ToastrService,
     private router: Router
   ) {}
@@ -37,10 +37,10 @@ export class TecnicoCreateComponent implements OnInit {
   ngOnInit(): void {}
 
   create(): void {
-    this.service.create(this.tecnico).subscribe(
+    this.service.create(this.cliente).subscribe(
       () => {
         this.toast.success("Técnico cadastrado com sucesso!", "Cadastro");
-        this.router.navigate(["tecnicos"]);
+        this.router.navigate(["Clientes"]);
       },
       (ex) => {
         ex.error.errors.forEach((element: any) => {
@@ -51,10 +51,10 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   addPerfil(perfil: any) {
-    if (!this.tecnico.perfis.includes(perfil)) {
-      this.tecnico.perfis?.push(perfil);
+    if (!this.cliente.perfis.includes(perfil)) {
+      this.cliente.perfis?.push(perfil);
     } else {
-      this.tecnico.perfis?.splice(this.tecnico.perfis.indexOf(perfil), 1);
+      this.cliente.perfis?.splice(this.cliente.perfis.indexOf(perfil), 1);
     }
   }
 

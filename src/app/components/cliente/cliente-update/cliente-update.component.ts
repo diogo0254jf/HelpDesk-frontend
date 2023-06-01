@@ -1,17 +1,17 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { Tecnico } from "src/app/models/tecnico";
-import { TecnicoService } from "src/app/services/tecnico.service";
+import { Cliente } from "src/app/models/cliente";
+import { Clienteservice } from "src/app/services/cliente.service";
 
 @Component({
-  selector: "app-tecnico-update",
-  templateUrl: "./tecnico-update.component.html",
-  styleUrls: ["./tecnico-update.component.css"],
+  selector: "app-cliente-update",
+  templateUrl: "./cliente-update.component.html",
+  styleUrls: ["./cliente-update.component.css"],
 })
-export class TecnicoUpdateComponent implements OnInit {
-  tecnico: Tecnico = {
+export class ClienteUpdateComponent implements OnInit {
+  cliente: Cliente = {
     id: "",
     nome: "",
     cpf: "",
@@ -27,30 +27,29 @@ export class TecnicoUpdateComponent implements OnInit {
   senha: FormControl = new FormControl(null, Validators.minLength(3));
 
   constructor(
-    private service: TecnicoService,
+    private service: Clienteservice,
     private toast: ToastrService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.tecnico.id = this.route.snapshot.paramMap.get("id")!;
-    this.findById(this.tecnico.id);
+    this.cliente.id = this.route.snapshot.paramMap.get("id")!;
+    this.findById(this.cliente.id);
   }
 
   findById(id: any): void {
     this.service.findById(id).subscribe((res) => {
       res.perfis = [];
-      this.tecnico = res;
-      
+      this.cliente = res;
     });
   }
 
   update(): void {
-    this.service.update(this.tecnico).subscribe(
+    this.service.update(this.cliente).subscribe(
       () => {
         this.toast.success("Técnico atualizado com sucesso!", "Sucesso!");
-        this.router.navigate(['tecnicos'])
+        this.router.navigate(["Clientes"]);
       },
       (ex) => {
         this.toast.error(ex.error.message, ex.error.error);
@@ -59,10 +58,10 @@ export class TecnicoUpdateComponent implements OnInit {
   }
 
   addPerfil(perfil: any) {
-    if (!this.tecnico.perfis.includes(perfil)) {
-      this.tecnico.perfis?.push(perfil);
+    if (!this.cliente.perfis.includes(perfil)) {
+      this.cliente.perfis?.push(perfil);
     } else {
-      this.tecnico.perfis?.splice(this.tecnico.perfis.indexOf(perfil), 1);
+      this.cliente.perfis?.splice(this.cliente.perfis.indexOf(perfil), 1);
     }
   }
 
@@ -71,6 +70,4 @@ export class TecnicoUpdateComponent implements OnInit {
       this.nome.valid && this.cpf.valid && this.email.valid && this.senha.valid
     );
   }
-
-  
 }
