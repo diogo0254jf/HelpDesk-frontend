@@ -11,6 +11,7 @@ import { ChamadoService } from "src/app/services/chamado-service";
 })
 export class ChamadoListComponent implements OnInit {
   ELEMENT_DATA: Chamado[] = [];
+  ELEMENT_DATAFILTRADO: Chamado[] = [];
 
   displayedColumns: string[] = [
     "position",
@@ -28,11 +29,15 @@ export class ChamadoListComponent implements OnInit {
   dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
 
   ngOnInit(): void {
+    this.findAll();
+  }
+
+  findAll(): void {
     this.service.findAll().subscribe((resposta) => {
       this.ELEMENT_DATA = resposta;
       this.dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
-    }
-  )}
+    });
+  }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -43,5 +48,60 @@ export class ChamadoListComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  retornaStatus(status: any) {
+    console.log(status);
+    switch (status) {
+      case 0:
+        return "ABERTO";
+      case 1:
+        return "EM ANDAMENTO";
+      default:
+        return "ENCERRADO";
+    }
+  }
+
+  retornaPrioridade(prioridade: any) {
+    switch (prioridade) {
+      case 0:
+        return "BAIXA";
+      case 1:
+        return "MEDIA";
+      default:
+        return "ALTA";
+    }
+  }
+
+  findByStatus(status: any) {
+    this.ELEMENT_DATAFILTRADO = [];
+    this.service.findAll().subscribe((resposta) => {
+      resposta.forEach((chamado) => {
+        if (chamado.status == status) {
+          this.ELEMENT_DATAFILTRADO.push(chamado);
+        }
+      });
+      this.dataSource = new MatTableDataSource<Chamado>(
+        this.ELEMENT_DATAFILTRADO
+      );
+    });
+  }
+
+  findByPrioridade(prioridade: any) {
+    this.ELEMENT_DATAFILTRADO = [];
+    this.service.findAll().subscribe((resposta) => {
+      resposta.forEach((chamado) => {
+        if (chamado.prioridade == prioridade) {
+          this.ELEMENT_DATAFILTRADO.push(chamado);
+        }
+      });
+      this.dataSource = new MatTableDataSource<Chamado>(
+        this.ELEMENT_DATAFILTRADO
+      );
+    });
+  }
+
+  cleanFilter() {
+    this.findAll();
   }
 }
