@@ -1,4 +1,4 @@
-export interface Tecnico {
+export interface Chamado {
   id?: any;
   dataAbertura?: String;
   dataFechamento?: String;
