@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
     senha: "",
   };
 
-  email = new FormControl(null, Validators.email);
-  senha = new FormControl(null, Validators.minLength(3));
+  email = new FormControl(null, [Validators.email, Validators.required]);
+  senha = new FormControl(null, [Validators.minLength(3), Validators.required]);
 
   constructor(
     private toast: ToastrService,

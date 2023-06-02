@@ -1,35 +1,40 @@
 <div class="container">
-  <form class="form">
-    <img src="../../../assets/img/login-image.svg" alt="Imagem de login" />
-    <mat-form-field class="full-width">
-      <mat-label>Email</mat-label>
-      <input
-        [formControl]="email"
-        [(ngModel)]="creds.email"
-        name="email"
-        matInput
-        type="email"
-        placeholder="email@email.com"
-        required
-      />
-    </mat-form-field>
+  <form class="form mat-elevation-z8">
+    <img
+      class="form-image"
+      width="500px"
+      src="assets/img/login-image.svg"
+      alt="Imagem de login"
+    />
+    <div class="form-inputs">
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input
+          [formControl]="email"
+          [(ngModel)]="creds.email"
+          name="email"
+          matInput
+          type="email"
+          placeholder="email@email.com"
+        />
+      </mat-form-field>
 
-    <mat-form-field class="full-width">
-      <mat-label>Senha</mat-label>
-      <input
-        [formControl]="senha"
-        matInput
-        [(ngModel)]="creds.senha"
-        name="senha"
-        type="password"
-        placeholder="Digite aqui"
-        required
-      />
-    </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Senha</mat-label>
+        <input
+          [formControl]="senha"
+          matInput
+          [(ngModel)]="creds.senha"
+          name="senha"
+          type="password"
+          placeholder="Digite aqui"
+        />
+      </mat-form-field>
+    </div>
 
     <button
       [disabled]="!validaCampos()"
-      class="login-buttom"
+      class="form-login-buttom"
       mat-raised-button
       color="primary"
       (click)="logar()"

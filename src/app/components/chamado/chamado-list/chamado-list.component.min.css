@@ -1,0 +1,84 @@
+.Filtertitle,
+.title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+    sans-serif;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-style: italic;
+}
+table {
+  width: 100%;
+}
+.filtro {
+  margin-top: 1rem;
+  width: 80%;
+}
+.btnNovo,
+.btnNovoFiltro {
+  margin: auto 0;
+  color: #fff;
+  font-size: bold;
+  transition: 0.1s;
+}
+.campoOptions {
+  display: flex;
+  justify-content: space-around;
+}
+.btnNovo {
+  background-color: #0f0;
+  text-shadow: 0 0.3em 0.5em #000;
+}
+.btnNovo:active {
+  margin: 1rem 0;
+  background-color: #0f0;
+  color: #fff;
+  font-size: bold;
+  text-shadow: none;
+  transition: 0.1s;
+}
+.btnNovoFiltro {
+  background-color: #0d4ac3;
+  text-shadow: 0 0 0.3em #000;
+}
+.edit {
+  color: #0c8faa;
+}
+.delete {
+  color: #aa0c0c;
+}
+mat-radio-group {
+  display: flex;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+.orderedBy {
+  display: flex;
+  justify-content: start;
+  gap: 10rem;
+  user-select: none;
+  margin-left: 4rem;
+}
+.prioridade,
+.status {
+  justify-content: center;
+}
+.status {
+  display: inline-flex;
+}
+.prioridade {
+  display: flex;
+}
+.Filtertitle {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
