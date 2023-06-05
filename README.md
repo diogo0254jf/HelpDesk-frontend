@@ -1,5 +1,3 @@
-Claro! Vou ajudá-lo a criar um README para o repositório "HelpDesk Frontend". Aqui está um exemplo de como você pode estruturar seu arquivo README:
-
 # HelpDesk-frontend-final
 
 Este é o repositório do front-end final do sistema HelpDesk.
