@@ -16,18 +16,23 @@ input:-webkit-autofill {
   );
 }
 
+.container img {
+  width: 100%;
+  object-fit: cover;
+  position: flex;
+  top: 0;
+  left: 0;
+}
 .form {
   display: flex;
   flex-direction: column;
-  height: auto;
-  max-width: 400px;
+  max-width: 25rem;
   background: linear-gradient(
     142deg,
     rgb(10, 111, 131) 0%,
     rgba(0, 212, 255, 1) 100%
   );
-  margin: 10rem 0;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
 }
 
