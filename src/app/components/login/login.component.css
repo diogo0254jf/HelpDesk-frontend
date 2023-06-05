@@ -25,7 +25,7 @@ input:-webkit-autofill {
     rgb(10, 111, 131) 0%,
     rgba(0, 212, 255, 1) 100%
   );
-
+  margin-bottom: 10%;
   padding: 20px;
   border-radius: 10px;
 }
