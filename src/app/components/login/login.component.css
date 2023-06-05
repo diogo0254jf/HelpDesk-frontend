@@ -19,13 +19,13 @@ input:-webkit-autofill {
   display: flex;
   flex-direction: column;
   height: auto;
-  max-width: 420px;
+  max-width: 400px;
   background: linear-gradient(
     142deg,
     rgb(10, 111, 131) 0%,
     rgba(0, 212, 255, 1) 100%
   );
-  margin-bottom: 10%;
+  margin: 10rem 0;
   padding: 20px;
   border-radius: 10px;
 }
