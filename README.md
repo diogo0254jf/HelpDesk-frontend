@@ -1,27 +1,53 @@
-# Helpdesk
+Claro! Vou ajudá-lo a criar um README para o repositório "HelpDesk Frontend". Aqui está um exemplo de como você pode estruturar seu arquivo README:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+# HelpDesk-frontend-final
 
-## Development server
+Este é o repositório do front-end final do sistema HelpDesk.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Descrição
 
-## Code scaffolding
+O HelpDesk-frontend-final é a parte front-end de um sistema HelpDesk, que permite que os usuários registrem e acompanhem os tickets de suporte. Esta aplicação foi desenvolvida utilizando [TypeScript/Angular], e se integra com o back-end do HelpDesk.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades
 
-## Build
+- Registro de novos tickets de suporte
+- Acompanhamento de tickets existentes
+- Atualização do status dos tickets
+- Adição de comentários aos tickets
+- Pesquisa avançada de tickets
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalação
 
-## Running unit tests
+1. Clone este repositório: `git clone https://github.com/diogo0254jf/HelpDesk-frontend-final.git`
+2. Acesse o diretório do projeto: `cd HelpDesk-frontend-final`
+3. Instale as dependências: `npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Configuração
 
-## Running end-to-end tests
+1. Abra o arquivo `src/config.js` e defina as seguintes variáveis de ambiente:
+   - `API_URL`: URL do back-end do HelpDesk
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Uso
 
-## Further help
+1. Inicie o servidor de desenvolvimento: `npm start`
+2. Acesse o aplicativo em seu navegador: `http://localhost:3000`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contribuição
+
+Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga as etapas abaixo:
+
+1. Faça um fork do repositório
+2. Crie uma nova branch: `git checkout -b minha-nova-feature`
+3. Faça as alterações necessárias e adicione os commits: `git commit -am 'Adicionei uma nova feature'`
+4. Envie as alterações para o seu fork: `git push origin minha-nova-feature`
+5. Crie um novo pull request no repositório original
+
+## Licença
+
+Este projeto está licenciado sob a [Licença XYZ]. Consulte o arquivo `LICENSE` para obter mais informações.
+
+## Contato
+
+Se você tiver alguma dúvida ou sugestão, entre em contato com Diogo Costa por e-mail contato.diogofcosta@gmail.com.
+
+Espero que isso ajude! Certifique-se de personalizar as seções de acordo com as informações relevantes para o seu projeto.
