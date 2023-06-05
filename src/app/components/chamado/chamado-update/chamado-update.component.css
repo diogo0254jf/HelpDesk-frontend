@@ -1,0 +1,67 @@
+.container {
+    width: 35rem;
+    margin: auto;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.6rem;
+  }
+  
+  .container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .fullWidth {
+    width: 100%;
+  }
+  
+  img {
+    width: 100%;
+    height: 12rem;
+    margin: auto;
+  }
+  
+  .form {
+    margin-top: 1rem;
+  }
+  
+  .inputForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .text-area {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .text-area-ta {
+    margin: auto;
+    min-height: 3rem;
+    max-height: 6rem;
+  }
+  
+  .botoes {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 1rem;
+    margin: 2rem;
+  }
+  
+  .buttonsForm {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+  }
+  
+  .copwright {
+    margin-top: 2rem;
+    text-align: center;
+    opacity: 0.5;
+  }
+  

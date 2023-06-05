@@ -51,7 +51,6 @@ export class ChamadoListComponent implements OnInit {
   }
 
   retornaStatus(status: any) {
-    console.log(status);
     switch (status) {
       case 0:
         return "ABERTO";

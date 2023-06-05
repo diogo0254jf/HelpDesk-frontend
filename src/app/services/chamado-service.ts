@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { API_CONFIG } from "../config/api.config";
 import { Chamado } from "../models/chamado";
+import { Cliente } from "../models/cliente";
 
 @Injectable({
   providedIn: "root",
@@ -18,14 +19,14 @@ export class ChamadoService {
     return this.http.get<Chamado[]>(`${API_CONFIG.baseUrl}/chamados`);
   }
 
-  create(Chamado: Chamado): Observable<Chamado> {
-    return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados`, Chamado);
+  create(chamado: Chamado): Observable<Chamado> {
+    return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado);
   }
 
-  update(Chamado: Chamado): Observable<Chamado> {
+  update(chamado: Chamado): Observable<Chamado> {
     return this.http.put<Chamado>(
-      `${API_CONFIG.baseUrl}/chamados/${Chamado.id}`,
-      Chamado
+      `${API_CONFIG.baseUrl}/chamados/${chamado.id}`,
+      chamado
     );
   }
 }
