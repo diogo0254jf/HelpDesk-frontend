@@ -33,7 +33,7 @@
     <div class="orderedBy">
       <div class="status">
         <h3>STATUS:</h3>
-        <mat-radio-group>
+        <mat-radio-group [(ngModel)]="filtroStatus">
           <mat-radio-button (click)="findByStatus('0')" value="a"
             >Aberto</mat-radio-button
           >
@@ -48,7 +48,7 @@
 
       <div class="prioridade">
         <h3>PRIORIDADE:</h3>
-        <mat-radio-group>
+        <mat-radio-group [(ngModel)]="filtroPrioridade">
           <mat-radio-button (click)="findByPrioridade('0')" value="a"
             >Baixa</mat-radio-button
           >

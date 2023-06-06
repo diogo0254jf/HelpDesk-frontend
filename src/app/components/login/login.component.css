@@ -23,6 +23,7 @@ input:-webkit-autofill {
   top: 0;
   left: 0;
 }
+
 .form {
   display: flex;
   flex-direction: column;

@@ -12,6 +12,8 @@ import { ChamadoService } from "src/app/services/chamado-service";
 export class ChamadoListComponent implements OnInit {
   ELEMENT_DATA: Chamado[] = [];
   ELEMENT_DATAFILTRADO: Chamado[] = [];
+  filtroStatus: string = "";
+  filtroPrioridade: string = "";
 
   displayedColumns: string[] = [
     "position",
@@ -33,9 +35,16 @@ export class ChamadoListComponent implements OnInit {
   }
 
   findAll(): void {
-    this.service.findAll().subscribe((resposta) => {
-      this.ELEMENT_DATA = resposta;
-      this.dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
+    this.service.findAll().subscribe((res) => {
+      this.ELEMENT_DATA = res;
+      this.dataSource = new MatTableDataSource<Chamado>(res);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.filter = "";
+      this.dataSource.paginator._intl.itemsPerPageLabel = "Itens por página";
+      this.dataSource.paginator._intl.firstPageLabel = "Primeira página";
+      this.dataSource.paginator._intl.lastPageLabel = "Última página";
+      this.dataSource.paginator._intl.nextPageLabel = "Próxima página";
+      this.dataSource.paginator._intl.previousPageLabel = "Página anterior";
     });
   }
 
@@ -102,5 +111,7 @@ export class ChamadoListComponent implements OnInit {
 
   cleanFilter() {
     this.findAll();
+    this.filtroStatus = "";
+    this.filtroPrioridade = "";
   }
 }

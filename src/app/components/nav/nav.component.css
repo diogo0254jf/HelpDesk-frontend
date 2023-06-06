@@ -19,11 +19,13 @@ img {
 }
 
 .sidenav a {
+  margin: 0.1rem .1rem;
   color: #fff;
 }
 
-.sidenav i {
-  margin-right: 0.6rem;
+.sidenav svg {
+  margin-left: .2rem;
+  width: 1rem;
 }
 
 .menu {

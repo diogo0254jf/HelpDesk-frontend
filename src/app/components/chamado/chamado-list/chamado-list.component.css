@@ -25,6 +25,8 @@ table {
 .campoOptions {
   display: flex;
   justify-content: space-around;
+  margin: 1rem 1rem;
+  gap: 1rem;
 }
 
 .btnNovo {
@@ -71,20 +73,17 @@ mat-radio-group {
 
 .orderedBy {
   display: flex;
-  justify-content: start;
-  gap: 10rem;
+  justify-content: center;
   user-select: none;
-  margin-left: 4rem;
+  gap: 5rem;
 }
 
 .status {
-  display: inline-flex;
-  justify-content: center;
+  display: flex;
 }
 
 .prioridade {
   display: flex;
-  justify-content: center;
 }
 
 .Filtertitle {
